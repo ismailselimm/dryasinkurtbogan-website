@@ -134,87 +134,145 @@
 
 
 
+
     <!-- Appointment Start -->
-    <div class="container-fluid appointment py-5" style="background: var(--bs-primary);">
+    <div class="container-fluid appointment py-5" style="background: #f3f2f7;">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class="appointment-form p-5">
-                        <p class="fs-4 text-uppercase text-primary">Get In Touch</p>
-                        <h1 class="display-4 mb-4 text-white">Get Appointment</h1>
-                        <form>
+                    <div class="appointment-form p-5"
+                        style="background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);">
+                        <p class="fs-4 text-uppercase text-primary">İletişime Geçin</p>
+                        <h1 class="display-4 mb-4 text-dark">Randevu Talebi Oluşturun</h1>
+                        <form id="randevuForm">
                             <div class="row gy-3 gx-4">
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control py-3 border-white bg-transparent text-white"
-                                        placeholder="First Name">
+                                    <input type="text" id="ad"
+                                        class="form-control py-3 border border-light bg-white text-dark"
+                                        placeholder="Adınız" required>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="email" class="form-control py-3 border-white bg-transparent text-white"
-                                        placeholder="Email">
+                                    <input type="tel" id="telefon"
+                                        class="form-control py-3 border border-light bg-white text-dark"
+                                        placeholder="Telefon Numaranız" required pattern="[0-9]{10,15}"
+                                        title="Lütfen geçerli bir telefon numarası giriniz">
                                 </div>
                                 <div class="col-lg-6">
-                                    <select class="form-select py-3 border-white bg-transparent"
-                                        aria-label="Default select example">
-                                        <option selected>Open this select menu</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select id="uygulama"
+                                        class="form-select py-3 border border-light bg-white text-dark" required>
+                                        <option value="" disabled selected>Uygulama Seçin</option>
+                                        <option value="Botoks Uygulamaları">Botoks Uygulamaları</option>
+                                        <option value="Dolgu İşlemleri">Dolgu İşlemleri</option>
+                                        <option value="Gençleştirme & Sıkılaştırma">Gençleştirme & Sıkılaştırma</option>
+                                        <option value="Cilt Bakımı">Cilt Bakımı</option>
+                                        <option value="PRP & Kök Hücre">PRP & Kök Hücre</option>
+                                        <option value="Mezoterapi">Mezoterapi</option>
+                                        <option value="Somon DNA">Somon DNA</option>
+                                        <option value="İp Askı">İp Askı</option>
+                                        <option value="Vücut Şekillendirme">Vücut Şekillendirme</option>
+                                        <option value="IV Terapi">IV Terapi</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="date" class="form-control py-3 border-white bg-transparent">
+                                    <input type="date" id="tarih"
+                                        class="form-control py-3 border border-light bg-white text-dark" required>
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea class="form-control border-white bg-transparent text-white" name="text"
-                                        id="area-text" cols="30" rows="5" placeholder="Write Comments"></textarea>
+                                    <textarea id="notlar" class="form-control border border-light bg-white text-dark"
+                                        cols="30" rows="5" placeholder="Eklemek istediğiniz notlar..."></textarea>
                                 </div>
                                 <div class="col-lg-12">
-                                    <button type="button"
-                                        class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5">SUBMIT
-                                        NOW</button>
+                                    <button type="button" id="submitBtn"
+                                        class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5">RANDEVU TALEBİ
+                                        OLUŞTUR</button>
                                 </div>
                             </div>
                         </form>
                     </div>
+
+                    <script>
+                        document.getElementById('submitBtn').addEventListener('click', function () {
+                            const ad = document.getElementById('ad').value.trim();
+                            const telefon = document.getElementById('telefon').value.trim();
+                            const uygulama = document.getElementById('uygulama').value;
+                            const tarih = document.getElementById('tarih').value;
+                            const notlar = document.getElementById('notlar').value.trim();
+
+                            if (!ad || !telefon || !uygulama || !tarih) {
+                                alert('Lütfen tüm zorunlu alanları doldurun.');
+                                return;
+                            }
+
+                            const girisMetni = 'Merhaba! Randevu Talebi Oluşturmak İstiyorum.:\n\n';
+
+                            const mesaj = `${girisMetni}Ad: ${ad}\nTelefon: ${telefon}\nUygulama: ${uygulama}\nTarih: ${tarih}\nNotlar: ${notlar}`;
+
+                            const telefonNumarasi = '905057243169';
+
+                            const whatsappLink = `https://wa.me/${telefonNumarasi}?text=${encodeURIComponent(mesaj)}`;
+
+                            window.open(whatsappLink, '_blank');
+                        });
+                    </script>
                 </div>
+
                 <div class="col-lg-6">
-                    <div class="appointment-time p-5">
-                        <h1 class="display-5 mb-4">Opening Hours</h1>
-                        <div class="d-flex justify-content-between fs-5 text-white">
-                            <p>Saturday:</p>
-                            <p>09:00 am – 10:00 pm</p>
+                    <div class="appointment-time p-5 rounded-4 bg-white shadow-lg">
+                        <h2 class="display-6 mb-4 fw-bold text-center text-dark">🕒 Çalışma Saatleri</h2>
+
+                        <div
+                            class="d-flex justify-content-between align-items-center py-2 px-3 mb-2 rounded-3 border bg-light">
+                            <span>📅 Pazartesi</span>
+                            <span>09:00 – 18:00</span>
                         </div>
-                        <div class="d-flex justify-content-between fs-5 text-white">
-                            <p>Sunday:</p>
-                            <p>09:00 am – 10:00 pm</p>
+                        <div
+                            class="d-flex justify-content-between align-items-center py-2 px-3 mb-2 rounded-3 border bg-light">
+                            <span>📅 Salı</span>
+                            <span>09:00 – 18:00</span>
                         </div>
-                        <div class="d-flex justify-content-between fs-5 text-white">
-                            <p>Monday:</p>
-                            <p>09:00 am – 10:00 pm</p>
+                        <div
+                            class="d-flex justify-content-between align-items-center py-2 px-3 mb-2 rounded-3 border bg-light">
+                            <span>📅 Çarşamba</span>
+                            <span>09:00 – 18:00</span>
                         </div>
-                        <div class="d-flex justify-content-between fs-5 text-white">
-                            <p>Tuesday:</p>
-                            <p>09:00 am – 10:00 pm</p>
+                        <div
+                            class="d-flex justify-content-between align-items-center py-2 px-3 mb-2 rounded-3 border bg-light">
+                            <span>📅 Perşembe</span>
+                            <span>09:00 – 17:00</span>
                         </div>
-                        <div class="d-flex justify-content-between fs-5 text-white">
-                            <p>Wednes:</p>
-                            <p>09:00 am – 08:00 pm</p>
+                        <div
+                            class="d-flex justify-content-between align-items-center py-2 px-3 mb-2 rounded-3 border bg-light">
+                            <span>📅 Cuma</span>
+                            <span>09:00 – 17:00</span>
                         </div>
-                        <div class="d-flex justify-content-between fs-5 text-white mb-4">
-                            <p>Thursday:</p>
-                            <p>09:00 am – 05:00 pm</p>
+                        <div
+                            class="d-flex justify-content-between align-items-center py-2 px-3 mb-2 rounded-3 border bg-light">
+                            <span>📅 Cumartesi</span>
+                            <span>10:00 – 15:00</span>
                         </div>
-                        <div class="d-flex justify-content-between fs-5 text-white mb-4">
-                            <p>Friday:</p>
-                            <p>CLOSED</p>
+                        <div
+                            class="d-flex justify-content-between align-items-center py-2 px-3 mb-4 rounded-3 border bg-dark text-white fw-bold">
+                            <span>🚫 Pazar</span>
+                            <span>KAPALI</span>
                         </div>
-                        <p class="text-dark">Check out seasonal discounts for best offers.</p>
+
+                        <div class="alert border-0 text-white text-center mb-0 fw-medium rounded-3"
+                            style="background-color: #6f42c1;">
+                            📌 Tatil ve özel günlerde saatler değişebilir. Lütfen randevu almayı unutmayın.
+                        </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
+
     </div>
     <!-- Appointment End -->
+
+
+
+
 
 
 

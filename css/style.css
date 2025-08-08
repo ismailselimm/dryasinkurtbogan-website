@@ -738,3 +738,18 @@
 }
 /*** copyright end ***/
 
+input.form-control,
+select.form-select,
+textarea.form-control {
+  border: 2px solid #999 !important; /* Daha koyu çizgi */
+  border-radius: 8px !important;
+  transition: border-color 0.3s ease !important;
+}
+
+input.form-control:focus,
+select.form-select:focus,
+textarea.form-control:focus {
+  border-color: #ff157f !important; /* Pembe */
+  box-shadow: 0 0 8px #ff157f99 !important;
+  outline: none !important;
+}
