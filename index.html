@@ -595,50 +595,78 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
                     <div class="appointment-form p-5">
-                        <p class="fs-4 text-uppercase text-primary">İletişime Geçin</p>
-                        <h1 class="display-4 mb-4 text-white">Randevu Talebi Oluşturun</h1>
-                        <form>
-                            <div class="row gy-3 gx-4">
-                                <div class="col-lg-6">
-                                    <input type="text"
-                                        class="form-control py-3 border border-light bg-white bg-opacity-10 text-white"
-                                        placeholder="Adınız" style="::placeholder { color: rgba(255,255,255,0.7); }">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="email"
-                                        class="form-control py-3 border border-light bg-white bg-opacity-10 text-white"
-                                        placeholder="E-posta Adresiniz">
-                                </div>
-                                <div class="col-lg-6">
-                                    <select
-                                        class="form-select py-3 border border-light bg-white bg-opacity-10 text-black">
-                                        <option selected class="text-dark">Uygulama Seçin</option>
-                                        <option value="1">Botoks</option>
-                                        <option value="2">Dolgu</option>
-                                        <option value="3">Cilt Bakımı</option>
-                                        <option value="4">PRP</option>
-                                        <option value="5">Somon DNA</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="date"
-                                        class="form-control py-3 border border-light bg-white bg-opacity-10 text-black">
-                                </div>
-                                <div class="col-lg-12">
-                                    <textarea class="form-control border border-light bg-white bg-opacity-10 text-white"
-                                        name="text" id="area-text" cols="30" rows="5"
-                                        placeholder="Eklemek istediğiniz notlar..."></textarea>
-                                </div>
-                                <div class="col-lg-12">
-                                    <button type="button"
-                                        class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5">RANDEVU TALEBİ
-                                        OLUŞTUR</button>
-                                </div>
-                            </div>
-                        </form>
+                      <p class="fs-4 text-uppercase text-primary">İletişime Geçin</p>
+                      <h1 class="display-4 mb-4 text-white">Randevu Talebi Oluşturun</h1>
+                      <form id="randevuForm">
+                        <div class="row gy-3 gx-4">
+                          <div class="col-lg-6">
+                            <input type="text" id="ad"
+                              class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark"
+                              placeholder="Adınız" style="::placeholder { color: rgba(255,255,255,0.7); }" required>
+                          </div>
+                          <div class="col-lg-6">
+                            <input type="tel" id="telefon"
+                              class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark"
+                              placeholder="Telefon Numaranız" required pattern="[0-9]{10,15}" title="Lütfen geçerli bir telefon numarası giriniz">
+                          </div>
+                          <div class="col-lg-6">
+                            <select id="uygulama" class="form-select py-3 border border-light bg-white bg-opacity-10 text-dark" required>
+                                <option value="" disabled selected>Uygulama Seçin</option>
+                                <option value="Botoks Uygulamaları">Botoks Uygulamaları</option>
+                                <option value="Dolgu İşlemleri">Dolgu İşlemleri</option>
+                                <option value="Gençleştirme & Sıkılaştırma">Gençleştirme & Sıkılaştırma</option>
+                                <option value="Cilt Bakımı">Cilt Bakımı</option>
+                                <option value="PRP & Kök Hücre">PRP & Kök Hücre</option>
+                                <option value="Mezoterapi">Mezoterapi</option>
+                                <option value="Somon DNA">Somon DNA</option>
+                                <option value="İp Askı">İp Askı</option>
+                                <option value="Vücut Şekillendirme">Vücut Şekillendirme</option>
+                                <option value="IV Terapi">IV Terapi</option>
+                              </select>                              
+                          </div>
+                          <div class="col-lg-6">
+                            <input type="date" id="tarih" class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark" required>
+                          </div>
+                          <div class="col-lg-12">
+                            <textarea id="notlar" class="form-control border border-light bg-white bg-opacity-10 text-dark" cols="30" rows="5"
+                              placeholder="Eklemek istediğiniz notlar..."></textarea>
+                          </div>
+                          <div class="col-lg-12">
+                            <button type="button" id="submitBtn"
+                              class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5">RANDEVU TALEBİ OLUŞTUR</button>
+                          </div>
+                        </div>
+                      </form>
                     </div>
-
-                </div>
+                  
+                    <script>
+                      document.getElementById('submitBtn').addEventListener('click', function () {
+                        const ad = document.getElementById('ad').value.trim();
+                        const telefon = document.getElementById('telefon').value.trim();
+                        const uygulama = document.getElementById('uygulama').value;
+                        const tarih = document.getElementById('tarih').value;
+                        const notlar = document.getElementById('notlar').value.trim();
+                  
+                        if (!ad || !telefon || !uygulama || !tarih) {
+                          alert('Lütfen tüm zorunlu alanları doldurun.');
+                          return;
+                        }
+                  
+                        // Whatsapp mesajına başta güzel bir giriş ekliyoruz
+                        const girisMetni = 'Merhaba! Randevu Talebi Oluşturmak İstiyorum.:\n\n';
+                  
+                        const mesaj = `${girisMetni}Ad: ${ad}\nTelefon: ${telefon}\nUygulama: ${uygulama}\nTarih: ${tarih}\nNotlar: ${notlar}`;
+                  
+                        const telefonNumarasi = '905057243169'; 
+                  
+                        // URL encode & WhatsApp link
+                        const whatsappLink = `https://wa.me/${telefonNumarasi}?text=${encodeURIComponent(mesaj)}`;
+                  
+                        window.open(whatsappLink, '_blank');
+                      });
+                    </script>
+                  </div>
+                  
                 <div class="col-lg-6">
                     <div class="appointment-time p-5 rounded-4 bg-dark bg-opacity-75 shadow-lg">
                         <h2 class="display-6 mb-4 text-white fw-bold text-center">🕒 Çalışma Saatleri</h2>
@@ -1022,213 +1050,237 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid testimonial py-5">
+    <div class="container-fluid testimonial py-5" style="background: #2c001e;">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5" style="max-width: 800px;">
-                <p class="fs-4 text-uppercase text-primary">Danışan Yorumları</p>
+                <p class="fs-4 text-uppercase text-primary" style="color:#ff157f;">Danışan Yorumları</p>
                 <h1 class="display-4 mb-4 text-white">Hastalarımız Ne Diyor?</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item rounded p-4">
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
                     <div class="row">
-                        <div class="col-4">
-                            <div class="d-flex flex-column mx-auto">
-                                <div class="rounded-circle mb-4" style="border: dashed; border-color: var(--bs-white);">
-                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="mb-2 text-primary">Elif K.</h4>
-                                    <p class="m-0 text-white">Öğretmen</p>
-                                </div>
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Elif K.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">Öğretmen</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="col-8">
-                            <div class="position-absolute" style="top: 20px; right: 25px;">
-                                <i class="fa fa-quote-right fa-2x text-secondary"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="d-flex mb-4">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                                <p class="fs-5 mb-0 text-white">Botoks uygulaması sonrası yüzümdeki çizgiler tamamen
-                                    yok
-                                    oldu. Dr. Yasin Bey’e gönül rahatlığıyla güvenebilirsiniz.</p>
-                            </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Botoks uygulaması sonrası yüzümdeki çizgiler tamamen yok oldu. Dr. Yasin Bey’e gönül
+                            rahatlığıyla güvenebilirsiniz.
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
                         </div>
                     </div>
                 </div>
 
-                <div class="testimonial-item rounded p-4">
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
                     <div class="row">
-                        <div class="col-4">
-                            <div class="d-flex flex-column mx-auto">
-                                <div class="rounded-circle mb-4" style="border: dashed; border-color: var(--bs-white);">
-                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="mb-2 text-primary">Burak Y.</h4>
-                                    <p class="m-0 text-white">İşletmeci</p>
-                                </div>
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Burak Y.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">İşletmeci</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="col-8">
-                            <div class="position-absolute" style="top: 20px; right: 25px;">
-                                <i class="fa fa-quote-right fa-2x text-secondary"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="d-flex mb-4">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                                <p class="fs-5 mb-0 text-white">Cilt gençleştirme işlemi sonrası tenimdeki yenilenme
-                                    etkisi
-                                    inanılmaz. Kendimi çok daha dinç hissediyorum.</p>
-                            </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Cilt gençleştirme işlemi sonrası tenimdeki yenilenme etkisi inanılmaz. Kendimi çok daha dinç
+                            hissediyorum.
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
                         </div>
                     </div>
                 </div>
 
-                <div class="testimonial-item rounded p-4">
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
                     <div class="row">
-                        <div class="col-4">
-                            <div class="d-flex flex-column mx-auto">
-                                <div class="rounded-circle mb-4" style="border: dashed; border-color: var(--bs-white);">
-                                    <img src="img/testimonial-2.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="mb-2 text-primary">Selin D.</h4>
-                                    <p class="m-0 text-white">Doktor</p>
-                                </div>
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Merve T.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">Mimar</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="col-8">
-                            <div class="position-absolute" style="top: 20px; right: 25px;">
-                                <i class="fa fa-quote-right fa-2x text-secondary"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="d-flex mb-4">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                                <p class="fs-5 mb-0 text-white">Dolgu uygulamasında gösterilen özen ve doğallık tam
-                                    istediğim
-                                    gibi oldu.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item rounded p-4">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="d-flex flex-column mx-auto">
-                                <div class="rounded-circle mb-4" style="border: dashed; border-color: var(--bs-white);">
-                                    <img src="img/testimonial-3.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="mb-2 text-primary">Emre K.</h4>
-                                    <p class="m-0 text-white">Mühendis</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="position-absolute" style="top: 20px; right: 25px;">
-                                <i class="fa fa-quote-right fa-2x text-secondary"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="d-flex mb-4">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                                <p class="fs-5 mb-0 text-white">Mezoterapi sonrası cildimdeki canlılık ve nem artışı
-                                    gözle
-                                    görülür şekilde oldu.</p>
-                            </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Somon DNA ve PRP uygulamaları sayesinde cildim hiç olmadığı kadar parlak ve sağlıklı.
+                            Teşekkür ederim!
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="testimonial-item rounded p-4">
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
                     <div class="row">
-                        <div class="col-4">
-                            <div class="d-flex flex-column mx-auto">
-                                <div class="rounded-circle mb-4" style="border: dashed; border-color: var(--bs-white);">
-                                    <img src="img/testimonial-2.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="mb-2 text-primary">Merve T.</h4>
-                                    <p class="m-0 text-white">Mimar</p>
-                                </div>
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Merve T.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">Mimar</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="col-8">
-                            <div class="position-absolute" style="top: 20px; right: 25px;">
-                                <i class="fa fa-quote-right fa-2x text-secondary"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="d-flex mb-4">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                                <p class="fs-5 mb-0 text-white">Somon DNA ve PRP uygulamaları sayesinde cildim hiç
-                                    olmadığı kadar parlak ve sağlıklı. Teşekkür ederim!</p>
-                            </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Somon DNA ve PRP uygulamaları sayesinde cildim hiç olmadığı kadar parlak ve sağlıklı.
+                            Teşekkür ederim!
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-item rounded p-4">
+
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
                     <div class="row">
-                        <div class="col-4">
-                            <div class="d-flex flex-column mx-auto">
-                                <div class="rounded-circle mb-4" style="border: dashed; border-color: var(--bs-white);">
-                                    <img src="img/testimonial-3.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <h4 class="mb-2 text-primary">Aylin B.</h4>
-                                    <p class="m-0 text-white">Avukat</p>
-                                </div>
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Emre K.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">Mühendis</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <div class="col-8">
-                            <div class="position-absolute" style="top: 20px; right: 25px;">
-                                <i class="fa fa-quote-right fa-2x text-secondary"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="d-flex mb-4">
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                    <i class="fas fa-star text-primary"></i>
-                                </div>
-                                <p class="fs-5 mb-0 text-white">Uzun zamandır denemediğim yöntem kalmamıştı. Dr.
-                                    Yasin
-                                    Bey'in doğru yönlendirmesiyle istediğim görünüme ulaştım.</p>
-                            </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Mezoterapi sonrası cildimdeki canlılık ve nem artışı gözle görülür şekilde oldu. Çok
+                            memnunum!
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
                         </div>
                     </div>
                 </div>
+
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
+                    <div class="row">
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Aylin B.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">Avukat</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Uzun zamandır denemediğim yöntem kalmamıştı. Dr. Yasin Bey’in doğru yönlendirmesiyle
+                            istediğim görünüme ulaştım.
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
+                    <div class="row">
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Selin D.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">Doktor</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Dolgu uygulamasında gösterilen özen ve doğallık tam istediğim gibi oldu. Kesinlikle tavsiye
+                            ederim!
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
+                    <div class="row">
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Ahmet C.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">Girişimci</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Tedavi sürecinde gösterilen ilgi ve alaka gerçekten çok iyiydi. Çok teşekkür ederim.
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item rounded p-4 position-relative"
+                    style="background: rgba(255 255 255 / 0.05);">
+                    <div class="row">
+                        <div class="col-4 d-flex flex-column justify-content-center text-center">
+                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Selda K.</h4>
+                            <p class="m-0 text-white fst-italic mb-3">Psikolog</p>
+                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 position-relative text-white fs-5"
+                            style="line-height: 1.5; padding-left: 20px;">
+                            Danışmanlık sürecinde aldığım destek beni çok rahatlattı. Kesinlikle tavsiye ederim!
+                            <i class="fa fa-quote-right text-purple position-absolute"
+                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+
+    <style>
+        .text-purple {
+            color: #6818f5 !important;
+        }
+    </style>
 
 
     <!-- Contact Start -->

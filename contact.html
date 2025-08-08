@@ -134,54 +134,81 @@
 
 
     <!-- Contact Start -->
-    <div class="container-fluid contact py-5" style="background: var(--bs-primary);">
+    <div class="container-fluid contact py-5" style="background: #fce4ec;">
         <div class="container pt-5">
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-6">
-                    <div class="text-center">
-                        <h1 class="display-3 text-white mb-4">Contact Us</h1>
-                        <p class="text-white fs-4">The contact form is currently inactive. Get a functional and working
-                            contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little
-                            code and you're done. <a class="text-secondary"
-                                href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="contact-form rounded p-5">
-                        <form>
-                            <h1 class="display-6 mb-4">Do You have Any Questions?</h1>
-                            <div class="row gx-4 gy-3">
-                                <div class="col-xl-6">
-                                    <input type="text" class="form-control bg-white border-0 py-3 px-4"
-                                        placeholder="Your First Name">
-                                </div>
-                                <div class="col-xl-6">
-                                    <input type="email" class="form-control bg-white border-0 py-3 px-4"
-                                        placeholder="Your Email">
-                                </div>
-                                <div class="col-xl-6">
-                                    <input type="text" class="form-control bg-white border-0 py-3 px-4"
-                                        placeholder="Your Phone">
-                                </div>
-                                <div class="col-xl-6">
-                                    <input type="text" class="form-control bg-white border-0 py-3 px-4"
-                                        placeholder="Subject">
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control bg-white border-0 py-3 px-4" rows="4" cols="10"
-                                        placeholder="Your Message"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5"
-                                        type="submit">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6 text-center text-lg-start" style="color: #333;">
+              <h1 class="display-3 mb-4" style="font-weight: 700;">Bize Ulaşın</h1>
+              <p class="fs-5" style="max-width: 450px; margin: auto; margin-left: 0;">
+                Sorularınız mı var? Formu doldurarak bizimle kolayca iletişime geçebilirsiniz.
+              </p>
             </div>
+      
+            <div class="col-lg-6">
+              <div class="contact-form rounded p-5" style="background: #fff; box-shadow: 0 0 15px rgb(0 0 0 / 0.1);">
+                <form id="contactForm">
+                  <h2 class="mb-4" style="color: #333;">Sorularınız mı var?</h2>
+                  <div class="row gx-4 gy-3">
+                    <div class="col-xl-6">
+                      <input type="text" id="adSoyad" class="form-control py-3 px-4" placeholder="Adınız Soyadınız" required
+                        style="border-radius: 8px; border: 1px solid #ccc; color: #333;">
+                    </div>
+                    <div class="col-xl-6">
+                      <input type="tel" id="telefon" class="form-control py-3 px-4" placeholder="Telefon Numaranız" required
+                        pattern="[0-9]{10,15}" title="Geçerli bir telefon numarası giriniz"
+                        style="border-radius: 8px; border: 1px solid #ccc; color: #333;">
+                    </div>
+                    <div class="col-xl-12">
+                      <input type="email" id="email" class="form-control py-3 px-4" placeholder="E-posta Adresiniz" required
+                        style="border-radius: 8px; border: 1px solid #ccc; color: #333;">
+                    </div>
+                    <div class="col-xl-12">
+                      <input type="text" id="konu" class="form-control py-3 px-4" placeholder="Konu" required
+                        style="border-radius: 8px; border: 1px solid #ccc; color: #333;">
+                    </div>
+                    <div class="col-12">
+                      <textarea id="mesaj" class="form-control py-3 px-4" rows="4" placeholder="Mesajınız" required
+                        style="border-radius: 8px; border: 1px solid #ccc; color: #333;"></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="button" id="submitContact"
+                        class="btn w-100 py-3 px-5 fw-bold"
+                        style="border-radius: 8px; font-size: 1.1rem; background-color: #ff4081; color: white; border: none;">
+                        Gönder
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+      
+          </div>
         </div>
-    </div>
+      </div>
+      
+      
+      <script>
+        document.getElementById('submitContact').addEventListener('click', function () {
+          const adSoyad = document.getElementById('adSoyad').value.trim();
+          const telefon = document.getElementById('telefon').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const konu = document.getElementById('konu').value.trim();
+          const mesaj = document.getElementById('mesaj').value.trim();
+      
+          if (!adSoyad || !telefon || !email || !konu || !mesaj) {
+            alert('Lütfen tüm alanları doldurun.');
+            return;
+          }
+      
+          const whatsappNumarasi = '905057243169'; // Kendi numaranı yaz
+          const mesajMetni = `Yeni İletişim Talebi:%0AAd Soyad: ${encodeURIComponent(adSoyad)}%0ATelefon: ${encodeURIComponent(telefon)}%0AEmail: ${encodeURIComponent(email)}%0AKonu: ${encodeURIComponent(konu)}%0AMesaj: ${encodeURIComponent(mesaj)}`;
+      
+          const whatsappLink = `https://wa.me/${whatsappNumarasi}?text=${mesajMetni}`;
+      
+          window.open(whatsappLink, '_blank');
+        });
+      </script>
+      
     <div class="container-fluid pb-5">
         <div class="container py-5">
             <div class="row g-4 align-items-center">
@@ -255,7 +282,8 @@
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item">
                         <h4 class="mb-4 text-white">Bültene Kayıt</h4>
-                        <p class="text-white">Yeni medikal estetik hizmetlerinden ve kampanyalardan haberdar olmak için
+                        <p class="text-white">Yeni medikal estetik hizmetlerinden ve kampanyalardan haberdar olmak
+                            için
                             e-posta adresinizi bırakabilirsiniz.</p>
                         <div class="position-relative mx-auto rounded-pill">
                             <input class="form-control rounded-pill border-0 w-100 py-3 ps-4 pe-5" type="text"
@@ -269,64 +297,83 @@
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
                         <h4 class="mb-4 text-white">Hizmetlerimiz</h4>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Botoks Uygulamaları</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Dolgu İşlemleri</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Cilt Gençleştirme</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Leke Tedavileri</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> PRP Uygulaması</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Mezoterapi</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Somon DNA</a>
+                        <a href="hizmetler/botoks.html"><i class="fas fa-angle-right me-2"></i> Botoks Uygulamaları</a>
+                        <a href="hizmetler/dolgu.html"><i class="fas fa-angle-right me-2"></i> Dolgu İşlemleri</a>
+                        <a href="hizmetler/genclestirme.html"><i class="fas fa-angle-right me-2"></i> Gençleştirme &
+                            Sıkılaştırma</a>
+                        <a href="hizmetler/ciltbakimi.html"><i class="fas fa-angle-right me-2"></i> Cilt Bakımı</a>
+                        <a href="hizmetler/prpkokhucre.html"><i class="fas fa-angle-right me-2"></i> PRP & Kök Hücre</a>
+                        <a href="hizmetler/mezoterapi.html"><i class="fas fa-angle-right me-2"></i> Mezoterapi</a>
+                        <a href="hizmetler/exome.html"><i class="fas fa-angle-right me-2"></i> Somon DNA</a>
+                        <a href="hizmetler/ipaski.html"><i class="fas fa-angle-right me-2"></i> İp Askı</a>
+                        <a href="hizmetler/vucutsekillendirme.html"><i class="fas fa-angle-right me-2"></i> Vücut
+                            Şekillendirme</a>
+                        <a href="hizmetler/ivterapi.html"><i class="fas fa-angle-right me-2"></i> IV Terapi</a>
                     </div>
                 </div>
+
 
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
                         <h4 class="mb-4 text-white">Çalışma Saatleri</h4>
-                        <p class="text-muted mb-0">Pazartesi - Cuma: <span class="text-white"> 09:00 – 18:00</span></p>
+                        <p class="text-muted mb-0">Pazartesi - Cuma: <span class="text-white"> 09:00 – 18:00</span>
+                        </p>
                         <p class="text-muted mb-0">Cumartesi: <span class="text-white"> 10:00 – 16:00</span></p>
                         <p class="text-muted mb-0">Pazar: <span class="text-white"> Kapalı</span></p>
                         <h4 class="my-4 text-white">Adres</h4>
-                        <p class="mb-0"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Özel Şanmed Hastanesi,
+                        <p class="mb-0"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Özel Şanmed
+                            Hastanesi,
                             Şanlıurfa</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                        <h4 class="mb-4 text-white">Sosyal Medya</h4>
-                
-                        <a href="https://www.instagram.com/dr.yasinkurtbogan/" target="_blank">
-                            <i class="fas fa-angle-right me-2"></i> Instagram
+                        <h4 class="my-4 text-white">Sosyal Medya</h4>
+
+                        <a href="https://www.instagram.com/dr.yasinkurtbogan/" class="text-white d-block mb-2">
+                            <i class="fab fa-instagram me-2" style="color: #E1306C;"></i> Instagram
                         </a>
-                
-                        <a href="https://wa.me/905057243169" target="_blank">
-                            <i class="fas fa-angle-right me-2"></i> WhatsApp
+
+                        <a href="https://www.facebook.com/yasin.kurtbogan.3/" class="text-white d-block mb-2">
+                            <i class="fab fa-facebook me-2" style="color: #1877F2;"></i> Facebook
                         </a>
-                
-                        <a href="https://www.youtube.com/@dr.yasinkurtbogan" target="_blank">
-                            <i class="fas fa-angle-right me-2"></i> YouTube
+
+                        <a href="https://www.youtube.com/@dr.yasinkurtbogan" class="text-white d-block mb-2">
+                            <i class="fab fa-youtube me-2" style="color: #FF0000;"></i> YouTube
                         </a>
-                
-                        <h4 class="my-4 text-white">İletişim</h4>
-                
-                        <p class="mb-0">
-                            <i class="fas fa-envelope text-secondary me-2"></i>
-                            <a href="mailto:yasinkurtbogan@hotmail.com" class="text-white text-decoration-none">yasinkurtbogan@hotmail.com</a>
-                        </p>
-                
-                        <p class="mb-0">
-                            <i class="fas fa-phone text-secondary me-2"></i>
-                            <a href="tel:+905057243169" class="text-white text-decoration-none">+90 505 724 31 69</a>
-                        </p>
+
+                        <a href="https://wa.me/905057243169?text=Merhaba%20hocam%2C%20danışmak%20istiyorum."
+                            class="text-white d-block">
+                            <i class="fab fa-whatsapp me-2" style="color: #25D366;"></i> WhatsApp
+                        </a>
+
+                        <br>
+
+                        <h4 class="mb-4 text-white">İletişim</h4>
+
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-envelope me-2 text-secondary"></i>
+                            <a href="mailto:yasinkurtbogan@hotmail.com" class="text-white text-decoration-none">
+                                yasinkurtbogan@hotmail.com
+                            </a>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-phone me-2 text-secondary"></i>
+                            <a href="tel:+905057243169" class="text-white text-decoration-none">
+                                +90 505 724 31 69
+                            </a>
+                        </div>
+
                     </div>
-                </div>   
-                
-                
+                </div>
+
+
             </div>
         </div>
     </div>
     <!-- Footer End -->
-
 
 
     <!-- Copyright Start -->
@@ -334,27 +381,49 @@
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-md-4 text-center text-md-start mb-md-0">
-                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site
-                            Name</a>, All right reserved.</span>
+                    <span class="text-light">
+                        <a href="#"><i class="fas fa-copyright text-light me-2"></i>Dr. Yasin Kurtboğan</a>, Tüm
+                        hakları
+                        saklıdır.
+                    </span>
                 </div>
                 <div class="col-md-4">
                     <div class="d-flex justify-content-center">
-                        <a href="" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-0"><i
-                                class="fab fa-linkedin-in"></i></a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/yasin.kurtbogan.3/?locale=tr_TR" target="_blank"
+                            class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/dr.yasinkurtbogan/" target="_blank"
+                            class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@dr.yasinkurtbogan" target="_blank"
+                            class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle me-2">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/905057243169?text=Merhaba%20hocam%2C%20danışmak%20istiyorum."
+                            target="_blank" class="btn btn-light btn-light-outline-0 btn-sm-square rounded-circle">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
+
+
                 </div>
                 <div class="col-md-4 text-center text-md-end text-white">
-                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    Website Geliştirici:
+                    <a class="fw-bold text-white border-bottom" href="https://ismailselimgarip.com" target="_blank"
+                        rel="noopener noreferrer">
+                        İsmail Selim Garip
+                    </a>
                 </div>
+
             </div>
         </div>
     </div>
