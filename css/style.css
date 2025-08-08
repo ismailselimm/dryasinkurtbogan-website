@@ -161,8 +161,8 @@
 /*** Carousel Start ***/
 .carousel-item {
     position: relative;
-    min-height: 100vh
-    
+    min-height: 95vh; /* Görsel yüksekliğini arttırdık */
+    max-height: 95vh;
 }
 
 .carousel-item img {
@@ -172,20 +172,53 @@
     object-fit: cover;
 }
 
+/* Yazı alanı - opaklık dengesi korundu */
 .carousel-item .carousel-caption {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    padding: 2rem 1rem 4rem 1rem; /* Alt boşluk eklendi */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0.5));
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
     background-size: cover;
+    flex-direction: column;
 }
 
+/* Üst Başlık */
+.carousel-item .carousel-caption h4 {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #d63384 !important;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Ana Başlık */
+.carousel-item .carousel-caption h1 {
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    color: #111 !important;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* Açıklama Metni */
+.carousel-item .carousel-caption p {
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    color: #2a2a2a !important;
+    margin: 0 auto 3rem auto; /* Daha fazla alt boşluk */
+    max-width: 850px;
+    line-height: 1.6;
+}
+
+/* Slider oklarını gizleme */
 .carousel-control-prev,
 .carousel-control-next {
     opacity: 0;
@@ -196,8 +229,9 @@
     background: transparent;
 }
 
+/* Noktalar */
 #carouselId .carousel-indicators {
-    padding-bottom: 30px;
+    padding-bottom: 20px; /* Alt noktaları biraz daha aşağıya aldık */
 }
 
 #carouselId .carousel-indicators li {
@@ -703,3 +737,4 @@
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
