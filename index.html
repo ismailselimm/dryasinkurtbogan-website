@@ -30,6 +30,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
 </head>
 
 
@@ -74,13 +77,6 @@
                                 class="d-flex align-items-center justify-content-center rounded-circle"
                                 style="background-color: #1877F2; width: 40px; height: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.2); transition: 0.3s;">
                                 <i class="fab fa-facebook-f text-white"></i>
-                            </a>
-
-                            <!-- YouTube -->
-                            <a href="#" target="_blank"
-                                class="d-flex align-items-center justify-content-center rounded-circle"
-                                style="background-color: #FF0000; width: 40px; height: 40px; box-shadow: 0 3px 6px rgba(0,0,0,0.2); transition: 0.3s;">
-                                <i class="fab fa-youtube text-white"></i>
                             </a>
 
                             <!-- WhatsApp -->
@@ -142,12 +138,18 @@
 
     <!-- Carousel Start -->
     <div class="container-fluid carousel-header px-0">
-        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
-                <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
-            </ol>
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"
+            data-bs-pause="false" data-bs-wrap="true" data-bs-touch="true">
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselId" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Slides -->
             <div class="carousel-inner" role="listbox">
 
                 <!-- SLIDE 1 -->
@@ -156,17 +158,15 @@
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 800px;">
                             <h4 class="text-primary text-uppercase mb-2 fs-6">Medikal Estetik ve Güzellik</h4>
-                            <h1 class="text-capitalize text-dark mb-2 fs-2 fw-bold">Botoks ile Genç ve Dinamik Bir
-                                Görünüm</h1>
+                            <h1 class="text-capitalize text-dark mb-2 fs-2 fw-bold">Botoks ile Genç Görünüm</h1>
                             <p class="mx-md-4 fs-6 px-3 mb-3 text-dark">
-                                Alın, göz çevresi ve mimik bölgelerindeki çizgileri azaltarak daha pürüzsüz ve dinlenmiş
-                                bir yüz görünümüne kavuşun. Botoks uygulamaları ile doğal sonuçlar, sağlıklı bir ifade.
+                                Alın ve göz çevresindeki çizgileri azaltarak daha pürüzsüz, dinlenmiş bir ifade kazanın.
                             </p>
                             <div class="d-flex align-items-center justify-content-center gap-2 mt-2">
                                 <a class="btn btn-light btn-light-outline-0 rounded-pill py-2 px-4 me-2"
-                                    href="#">Detaylı Bilgi</a>
-                                <a class="btn btn-primary btn-primary-outline-0 rounded-pill py-2 px-4" href="#">Randevu
-                                    Al</a>
+                                    href="hizmetler/botoks.html">Detaylı Bilgi</a>
+                                <a class="btn btn-primary btn-primary-outline-0 rounded-pill py-2 px-4"
+                                    href="appointment.html">Randevu Al</a>
                             </div>
                         </div>
                     </div>
@@ -182,14 +182,13 @@
                             <h1 class="text-capitalize text-dark mb-2 fs-2 fw-bold">Dolgu Uygulamaları</h1>
                             <p class="mx-md-4 fs-6 px-3 mb-3 text-dark">
                                 Zamanla kaybolan hacimleri yerine koyun, yüz hatlarınızı belirginleştirin ve daha genç
-                                bir görünüm elde edin. Dudak, burun kenarı ve elmacık bölgesi için özel dolgu
-                                çözümleriyle fark yaratın.
+                                bir görünüm elde edin.
                             </p>
                             <div class="d-flex align-items-center justify-content-center gap-2 mt-2">
                                 <a class="btn btn-light btn-light-outline-0 rounded-pill py-2 px-4 me-2"
-                                    href="#">Uygulamaları Gör</a>
-                                <a class="btn btn-primary btn-primary-outline-0 rounded-pill py-2 px-4" href="#">Randevu
-                                    Al</a>
+                                    href="hizmetler/dolgu.html">Uygulamaları Gör</a>
+                                <a class="btn btn-primary btn-primary-outline-0 rounded-pill py-2 px-4"
+                                    href="appointment.html">Randevu Al</a>
                             </div>
                         </div>
                     </div>
@@ -205,14 +204,13 @@
                             <h1 class="text-capitalize text-dark mb-2 fs-2 fw-bold">PRP & Kök Hücre Tedavisi</h1>
                             <p class="mx-md-4 fs-6 px-3 mb-3 text-dark">
                                 Cildinize doğal bir ışıltı ve yenilenme kazandıran PRP & kök hücre tedavileriyle
-                                yaşlanma etkilerini azaltın. Kişinin kendi kanından elde edilen içeriklerle hücre
-                                yenilenmesini destekleyin.
+                                yaşlanma etkilerini azaltın.
                             </p>
                             <div class="d-flex align-items-center justify-content-center gap-2 mt-2">
-                                <a class="btn btn-light btn-light-outline-0 rounded-pill py-2 px-4 me-2" href="#">PRP
-                                    Hakkında</a>
-                                <a class="btn btn-primary btn-primary-outline-0 rounded-pill py-2 px-4" href="#">Randevu
-                                    Al</a>
+                                <a class="btn btn-light btn-light-outline-0 rounded-pill py-2 px-4 me-2"
+                                    href="hizmetler/prpkokhucre.html">PRP Hakkında</a>
+                                <a class="btn btn-primary btn-primary-outline-0 rounded-pill py-2 px-4"
+                                    href="appointment.html">Randevu Al</a>
                             </div>
                         </div>
                     </div>
@@ -232,6 +230,9 @@
         </div>
     </div>
     <!-- Carousel End -->
+
+
+
 
 
     <!-- Services Start -->
@@ -459,7 +460,7 @@
                     <div class="col-lg-5">
                         <div class="video position-relative">
                             <!-- Arka plan görseli -->
-                            <img src="img/about-1.jpg" class="img-fluid rounded" alt="">
+                            <img src="img/hizmetler/dolgucuyasin.jpg" class="img-fluid rounded" alt="">
 
                             <!-- Köşedeki küçük görsel -->
                             <div class="position-absolute rounded border-5 border-top border-start border-white"
@@ -477,12 +478,17 @@
                     <div class="col-lg-7">
                         <p class="fs-4 text-uppercase text-primary">Dr. Yasin Kurtboğan</p>
                         <h1 class="display-5 mb-4">Medikal Estetik Hekimi</h1>
-                        <p class="mb-4">2002 yılında Karadeniz Teknik Üniversitesi Tıp Fakültesi’nden mezun oldum. 20
-                            yılı
-                            aşkın süredir hekimlik yapıyor, hastalarıma hem klasik tıp hem de estetik tıp alanında
-                            hizmet
-                            veriyorum. Diyaliz hekimliği, aile hekimliği, iş yeri hekimliği ve aile terapisi gibi farklı
-                            alanlarda sertifikalı eğitimler aldım.</p>
+
+                        <p class="mb-4">
+                            20 yılı aşkın hekimlik tecrübemle, her hastamın ihtiyaçlarını ve beklentilerini dikkatle
+                            dinleyerek,
+                            onlara en güvenli ve doğal sonuçları sunmayı amaçlıyorum.
+                        </p>
+                        <p class="mb-4">
+                            Medikal estetik alanındaki yolculuğumda, amacım yalnızca dış görünüşü iyileştirmek değil;
+                            kişinin
+                            kendine olan güvenini, yaşam enerjisini ve aynaya bakışındaki mutluluğu artırmaktır.
+                        </p>
 
                         <div class="row g-4">
                             <div class="col-md-6">
@@ -505,19 +511,28 @@
                             </div>
                         </div>
 
-
-                        <p class="my-4">Son yıllarda uzmanlaştığım medikal estetik alanında; botoks, dolgu, PRP,
-                            mezoterapi
-                            ve cilt gençleştirme gibi uygulamalarda kişiye özel, doğal ve güvenli çözümler sunuyorum.
+                        <p class="my-4">
+                            Botoks, dolgu, PRP, mezoterapi, somon DNA ve cilt gençleştirme gibi birçok uygulamayı, her
+                            hastam
+                            için kişiye özel bir yaklaşımla planlıyor; abartıdan uzak, sağlıklı ve doğal sonuçlar elde
+                            etmeye
+                            özen gösteriyorum.
                         </p>
-                        <p class="mb-4">Amacım, her hastamın kendini iyi hissettiği, sağlıklı ve taze bir görünüme
-                            ulaşmasına destek olmak.</p>
-                        <a href="#" class="btn btn-primary btn-primary-outline-0 rounded-pill py-3 px-5">Detaylı
+                        <p class="mb-4">
+                            Hastalarımın kendilerini iyi hissettiği, taze ve sağlıklı bir görünüme kavuşması benim en
+                            büyük
+                            motivasyonum.
+                        </p>
+
+                        <a href="about.html"
+                            class="btn btn-primary btn-primary-outline-0 rounded-pill py-3 px-5">Detaylı
                             Bilgi</a>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- About End -->
+
 
         <!-- Modal Video -->
         <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -584,6 +599,7 @@
         </div>
         <!-- About End -->
     </div>
+    <!-- Services End -->
 
     <br><br><br>
 
@@ -594,78 +610,86 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
                     <div class="appointment-form p-5">
-                      <p class="fs-4 text-uppercase text-primary">İletişime Geçin</p>
-                      <h1 class="display-4 mb-4 text-white">Randevu Talebi Oluşturun</h1>
-                      <form id="randevuForm">
-                        <div class="row gy-3 gx-4">
-                          <div class="col-lg-6">
-                            <input type="text" id="ad"
-                              class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark"
-                              placeholder="Adınız" style="::placeholder { color: rgba(255,255,255,0.7); }" required>
-                          </div>
-                          <div class="col-lg-6">
-                            <input type="tel" id="telefon"
-                              class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark"
-                              placeholder="Telefon Numaranız" required pattern="[0-9]{10,15}" title="Lütfen geçerli bir telefon numarası giriniz">
-                          </div>
-                          <div class="col-lg-6">
-                            <select id="uygulama" class="form-select py-3 border border-light bg-white bg-opacity-10 text-dark" required>
-                                <option value="" disabled selected>Uygulama Seçin</option>
-                                <option value="Botoks Uygulamaları">Botoks Uygulamaları</option>
-                                <option value="Dolgu İşlemleri">Dolgu İşlemleri</option>
-                                <option value="Gençleştirme & Sıkılaştırma">Gençleştirme & Sıkılaştırma</option>
-                                <option value="Cilt Bakımı">Cilt Bakımı</option>
-                                <option value="PRP & Kök Hücre">PRP & Kök Hücre</option>
-                                <option value="Mezoterapi">Mezoterapi</option>
-                                <option value="Somon DNA">Somon DNA</option>
-                                <option value="İp Askı">İp Askı</option>
-                                <option value="Vücut Şekillendirme">Vücut Şekillendirme</option>
-                                <option value="IV Terapi">IV Terapi</option>
-                              </select>                              
-                          </div>
-                          <div class="col-lg-6">
-                            <input type="date" id="tarih" class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark" required>
-                          </div>
-                          <div class="col-lg-12">
-                            <textarea id="notlar" class="form-control border border-light bg-white bg-opacity-10 text-dark" cols="30" rows="5"
-                              placeholder="Eklemek istediğiniz notlar..."></textarea>
-                          </div>
-                          <div class="col-lg-12">
-                            <button type="button" id="submitBtn"
-                              class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5">RANDEVU TALEBİ OLUŞTUR</button>
-                          </div>
-                        </div>
-                      </form>
+                        <p class="fs-4 text-uppercase text-primary">İletişime Geçin</p>
+                        <h1 class="display-4 mb-4 text-white">Randevu Talebi Oluşturun</h1>
+                        <form id="randevuForm">
+                            <div class="row gy-3 gx-4">
+                                <div class="col-lg-6">
+                                    <input type="text" id="ad"
+                                        class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark"
+                                        placeholder="Adınız" style="::placeholder { color: rgba(255,255,255,0.7); }"
+                                        required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="tel" id="telefon"
+                                        class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark"
+                                        placeholder="Telefon Numaranız" required pattern="[0-9]{10,15}"
+                                        title="Lütfen geçerli bir telefon numarası giriniz">
+                                </div>
+                                <div class="col-lg-6">
+                                    <select id="uygulama"
+                                        class="form-select py-3 border border-light bg-white bg-opacity-10 text-dark"
+                                        required>
+                                        <option value="" disabled selected>Uygulama Seçin</option>
+                                        <option value="Botoks Uygulamaları">Botoks Uygulamaları</option>
+                                        <option value="Dolgu İşlemleri">Dolgu İşlemleri</option>
+                                        <option value="Gençleştirme & Sıkılaştırma">Gençleştirme & Sıkılaştırma</option>
+                                        <option value="Cilt Bakımı">Cilt Bakımı</option>
+                                        <option value="PRP & Kök Hücre">PRP & Kök Hücre</option>
+                                        <option value="Mezoterapi">Mezoterapi</option>
+                                        <option value="Somon DNA">Somon DNA</option>
+                                        <option value="İp Askı">İp Askı</option>
+                                        <option value="Vücut Şekillendirme">Vücut Şekillendirme</option>
+                                        <option value="IV Terapi">IV Terapi</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="date" id="tarih"
+                                        class="form-control py-3 border border-light bg-white bg-opacity-10 text-dark"
+                                        required>
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea id="notlar"
+                                        class="form-control border border-light bg-white bg-opacity-10 text-dark"
+                                        cols="30" rows="5" placeholder="Eklemek istediğiniz notlar..."></textarea>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="button" id="submitBtn"
+                                        class="btn btn-primary btn-primary-outline-0 w-100 py-3 px-5">RANDEVU TALEBİ
+                                        OLUŞTUR</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                  
+
                     <script>
-                      document.getElementById('submitBtn').addEventListener('click', function () {
-                        const ad = document.getElementById('ad').value.trim();
-                        const telefon = document.getElementById('telefon').value.trim();
-                        const uygulama = document.getElementById('uygulama').value;
-                        const tarih = document.getElementById('tarih').value;
-                        const notlar = document.getElementById('notlar').value.trim();
-                  
-                        if (!ad || !telefon || !uygulama || !tarih) {
-                          alert('Lütfen tüm zorunlu alanları doldurun.');
-                          return;
-                        }
-                  
-                        // Whatsapp mesajına başta güzel bir giriş ekliyoruz
-                        const girisMetni = 'Merhaba! Randevu Talebi Oluşturmak İstiyorum.:\n\n';
-                  
-                        const mesaj = `${girisMetni}Ad: ${ad}\nTelefon: ${telefon}\nUygulama: ${uygulama}\nTarih: ${tarih}\nNotlar: ${notlar}`;
-                  
-                        const telefonNumarasi = '905057243169'; 
-                  
-                        // URL encode & WhatsApp link
-                        const whatsappLink = `https://wa.me/${telefonNumarasi}?text=${encodeURIComponent(mesaj)}`;
-                  
-                        window.open(whatsappLink, '_blank');
-                      });
+                        document.getElementById('submitBtn').addEventListener('click', function () {
+                            const ad = document.getElementById('ad').value.trim();
+                            const telefon = document.getElementById('telefon').value.trim();
+                            const uygulama = document.getElementById('uygulama').value;
+                            const tarih = document.getElementById('tarih').value;
+                            const notlar = document.getElementById('notlar').value.trim();
+
+                            if (!ad || !telefon || !uygulama || !tarih) {
+                                alert('Lütfen tüm zorunlu alanları doldurun.');
+                                return;
+                            }
+
+                            // Whatsapp mesajına başta güzel bir giriş ekliyoruz
+                            const girisMetni = 'Merhaba! Randevu Talebi Oluşturmak İstiyorum.:\n\n';
+
+                            const mesaj = `${girisMetni}Ad: ${ad}\nTelefon: ${telefon}\nUygulama: ${uygulama}\nTarih: ${tarih}\nNotlar: ${notlar}`;
+
+                            const telefonNumarasi = '905057243169';
+
+                            // URL encode & WhatsApp link
+                            const whatsappLink = `https://wa.me/${telefonNumarasi}?text=${encodeURIComponent(mesaj)}`;
+
+                            window.open(whatsappLink, '_blank');
+                        });
                     </script>
-                  </div>
-                  
+                </div>
+
                 <div class="col-lg-6">
                     <div class="appointment-time p-5 rounded-4 bg-dark bg-opacity-75 shadow-lg">
                         <h2 class="display-6 mb-4 text-white fw-bold text-center">🕒 Çalışma Saatleri</h2>
@@ -722,563 +746,221 @@
     <!-- Appointment End -->
 
 
-    <!-- Gallery Start -->
-    <div class="container-fluid gallery py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto mb-5" style="max-width: 800px;">
-                <p class="fs-4 text-uppercase text-primary">Galeri</p>
-                <h1 class="display-4 mb-4">Uygulama Galerimiz</h1>
-            </div>
-            <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                    <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active"
-                            data-bs-toggle="pill" href="#tab-1">
-                            <span class="text-dark" style="width: 150px;">Tümü</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#tab-2">
-                            <span class="text-dark" style="width: 150px;">Botoks</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#tab-3">
-                            <span class="text-dark" style="width: 150px;">Dolgu</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#tab-4">
-                            <span class="text-dark" style="width: 150px;">PRP Uygulaması</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-4">
-                            <div class="col-lg-12">
-                                <div class="row g-4">
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-1.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Cilt Bakımı</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-1.jpg" data-lightbox="Gallery-1" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-2.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">PRP Uygulaması</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-2.jpg" data-lightbox="Gallery-2" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-3.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Somon DNA</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-3.jpg" data-lightbox="Gallery-3" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-4.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Botoks & Dolgu</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-4.jpg" data-lightbox="Gallery-4" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-5.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Cilt Bakımı</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-5.jpg" data-lightbox="Gallery-5" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-6.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">PRP Uygulaması</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-6.jpg" data-lightbox="Gallery-6" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-7.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Somon DNA</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-7.jpg" data-lightbox="Gallery-7" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-8.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Botoks & Dolgu</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-8.jpg" data-lightbox="Gallery-8" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-2" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-12">
-                                <div class="row g-4">
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-9.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Skin Care</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-9.jpg" data-lightbox="Gallery-9" class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-10.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Skin Care</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-10.jpg" data-lightbox="Gallery-10"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-5.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Skin Care</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-5.jpg" data-lightbox="Gallery-11"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-1.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Skin Care</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-1.jpg" data-lightbox="Gallery-12"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-3" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-12">
-                                <div class="row g-4">
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-11.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Stream Bath</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-11.jpg" data-lightbox="Gallery-13"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-12.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Stream Bath</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-12.jpg" data-lightbox="Gallery-14"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-2.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Stream Bath</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-2.jpg" data-lightbox="Gallery-15"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-6.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Stream Bath</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-6.jpg" data-lightbox="Gallery-16"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-4" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-12">
-                                <div class="row g-4">
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-13.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Stone Therapy</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-13.jpg" data-lightbox="Gallery-17"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-2.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Stone Therapy</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-2.jpg" data-lightbox="Gallery-18"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-3.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Stone Therapy</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-3.jpg" data-lightbox="Gallery-19"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-6">
-                                        <div class="gallery-img">
-                                            <img class="img-fluid rounded w-100" src="img/gallery-7.jpg" alt="">
-                                            <div class="gallery-overlay p-4">
-                                                <h4 class="text-secondary">Stone Therapy</h4>
-                                            </div>
-                                            <div class="search-icon">
-                                                <a href="img/gallery-7.jpg" data-lightbox="Gallery-20"
-                                                    class="my-auto"><i
-                                                        class="fas fa-search-plus btn-primary btn-primary-outline-0 rounded-circle p-3"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Galeri  -->
+    <section class="container py-5" id="home-gallery-preview">
+        <div class="text-center mx-auto mb-5" style="max-width:800px">
+            <span class="badge rounded-pill soft-badge">
+                <i class="fas fa-images me-2"></i> Foto Galeri
+            </span>
+            <br><br>
+            <h2 class="display-6 mb-2">Hizmetlerimizden Görseller</h2>
+            <p class="text-muted m-0">Her kategoriden birkaç örnek; tüm fotoğraflar için “Tümünü Gör” butonuna tıklayın.
+            </p>
         </div>
-    </div>
-    <!-- gallery End -->
+
+
+        <!-- BOTOKS -->
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <h3 class="h5 m-0">Botoks</h3>
+            <a href="gallery.html" class="btn btn-outline-primary rounded-pill px-3">Tümünü Gör</a>
+        </div>
+        <div class="mason">
+            <!-- Oran bozulmasın diye img'ler doğal (height:auto). İstersen 3-4 görsel bırak. -->
+            <a class="mason-item" href="img/galeri/botoks/botoks1.jpg" data-lightbox="botoks" data-title="Botoks 1">
+                <img src="img/galeri/botoks/botoks1.jpg" alt="Botoks 1" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/botoks/botoks2.jpeg" data-lightbox="botoks" data-title="Botoks 2">
+                <img src="img/galeri/botoks/botoks2.jpeg" alt="Botoks 2" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/botoks/botoks3.jpeg" data-lightbox="botoks" data-title="Botoks 3">
+                <img src="img/galeri/botoks/botoks3.jpeg" alt="Botoks 3" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/botoks/botoks4.jpeg" data-lightbox="botoks" data-title="Botoks 4">
+                <img src="img/galeri/botoks/botoks4.jpeg" alt="Botoks 4" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/botoks/botoks5.jpeg" data-lightbox="botoks" data-title="Botoks 4">
+                <img src="img/galeri/botoks/botoks5.jpeg" alt="Botoks 4" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/botoks/botoks6.jpeg" data-lightbox="botoks" data-title="Botoks 4">
+                <img src="img/galeri/botoks/botoks6.jpeg" alt="Botoks 4" loading="lazy">
+            </a>
+        </div>
+
+        <!-- DOLGU -->
+        <div class="d-flex align-items-center justify-content-between mt-5 mb-3">
+            <h3 class="h5 m-0">Dolgu</h3>
+            <a href="gallery.html" class="btn btn-outline-primary rounded-pill px-3">Tümünü Gör</a>
+        </div>
+        <div class="mason">
+            <!-- Buraya senin dolgu yollarını koyacağız -->
+            <a class="mason-item" href="img/galeri/dolgu/dolgu1.jpeg" data-lightbox="dolgu" data-title="Dolgu 1">
+                <img src="img/galeri/dolgu/dolgu1.jpeg" alt="Dolgu 1" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/dolgu/dolgu15.jpeg" data-lightbox="dolgu" data-title="Dolgu 2">
+                <img src="img/galeri/dolgu/dolgu15.jpeg" alt="Dolgu 2" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/dolgu/dolgu3.jpeg" data-lightbox="dolgu" data-title="Dolgu 3">
+                <img src="img/galeri/dolgu/dolgu3.jpeg" alt="Dolgu 3" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/dolgu/dolgu12.jpeg" data-lightbox="dolgu" data-title="Dolgu 4">
+                <img src="img/galeri/dolgu/dolgu12.jpeg" alt="Dolgu 4" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/dolgu/dolgu5.jpeg" data-lightbox="dolgu" data-title="Dolgu 4">
+                <img src="img/galeri/dolgu/dolgu5.jpeg" alt="Dolgu 4" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/dolgu/dolgu6.jpeg" data-lightbox="dolgu" data-title="Dolgu 4">
+                <img src="img/galeri/dolgu/dolgu6.jpeg" alt="Dolgu 4" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/dolgu/dolgu16.jpeg" data-lightbox="dolgu" data-title="Dolgu 4">
+                <img src="img/galeri/dolgu/dolgu16.jpeg" alt="Dolgu 4" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/dolgu/dolgu17.jpeg" data-lightbox="dolgu" data-title="Dolgu 4">
+                <img src="img/galeri/dolgu/dolgu17.jpeg" alt="Dolgu 4" loading="lazy">
+            </a>
+        </div>
+
+        <!-- PRP -->
+        <div class="d-flex align-items-center justify-content-between mt-5 mb-3">
+            <h3 class="h5 m-0">PRP</h3>
+            <a href="gallery.html" class="btn btn-outline-primary rounded-pill px-3">Tümünü Gör</a>
+        </div>
+        <div class="mason">
+            <!-- Buraya da PRP yollarını koyacağız -->
+            <a class="mason-item" href="img/galeri/prp/prp1.jpg" data-lightbox="prp" data-title="PRP 1">
+                <img src="img/galeri/prp/prp1.jpg" alt="PRP 1" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/prp/prp2.jpeg" data-lightbox="prp" data-title="PRP 2">
+                <img src="img/galeri/prp/prp2.jpeg" alt="PRP 2" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/prp/prp3.jpeg" data-lightbox="prp" data-title="PRP 3">
+                <img src="img/galeri/prp/prp3.jpeg" alt="PRP 3" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/prp/prp4.jpeg" data-lightbox="prp" data-title="PRP 4">
+                <img src="img/galeri/prp/prp4.jpeg" alt="PRP 4" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/prp/prp5.jpeg" data-lightbox="prp" data-title="PRP 4">
+                <img src="img/galeri/prp/prp5.jpeg" alt="PRP 4" loading="lazy">
+            </a>
+            <a class="mason-item" href="img/galeri/prp/prp6.jpeg" data-lightbox="prp" data-title="PRP 4">
+                <img src="img/galeri/prp/prp6.jpeg" alt="PRP 4" loading="lazy">
+            </a>
+        </div>
+    </section>
+    <!-- Galeri  -->
+
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid testimonial py-5" style="background: #2c001e;">
+    <section class="container-fluid py-5" style="background:#2c001e;">
         <div class="container py-5">
-            <div class="text-center mx-auto mb-5" style="max-width: 800px;">
-                <p class="fs-4 text-uppercase text-primary" style="color:#ff157f;">Danışan Yorumları</p>
+            <div class="text-center mx-auto mb-5" style="max-width:800px;">
+                <p class="fs-4 text-uppercase" style="color:#ff157f;">Danışan Yorumları</p>
                 <h1 class="display-4 mb-4 text-white">Hastalarımız Ne Diyor?</h1>
             </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Elif K.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">Öğretmen</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+
+            <!-- ÜST ŞERİT (sağa kayar) -->
+            <div class="testimonial-ticker ticker-top">
+                <div class="ticker-track">
+                    <!-- Kartlar -->
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Elif K.</h6><span>Öğretmen</span>
                         </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Botoks uygulaması sonrası yüzümdeki çizgiler tamamen yok oldu. Dr. Yasin Bey’e gönül
-                            rahatlığıyla güvenebilirsiniz.
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
+                        <p>Botoks uygulaması sonrası yüzümdeki çizgiler tamamen yok oldu. Dr. Yasin Bey’e gönül
+                            rahatlığıyla güvenebilirsiniz.</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Burak Y.</h6><span>İşletmeci</span>
                         </div>
-                    </div>
+                        <p>Cilt gençleştirme sonrası tenimdeki yenilenme etkisi inanılmaz. Kendimi çok daha dinç
+                            hissediyorum.</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Merve T.</h6><span>Mimar</span>
+                        </div>
+                        <p>Somon DNA ve PRP uygulamaları sayesinde cildim hiç olmadığı kadar parlak ve sağlıklı.
+                            Teşekkür ederim!</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Emre K.</h6><span>Mühendis</span>
+                        </div>
+                        <p>Mezoterapi sonrası cildimdeki canlılık ve nem artışı gözle görülür şekilde oldu. Çok
+                            memnunum!</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Aylin B.</h6><span>Avukat</span>
+                        </div>
+                        <p>Doğru yönlendirmeyle tam istediğim görünüme ulaştım. İlgi ve alaka harikaydı.</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Selin D.</h6><span>Doktor</span>
+                        </div>
+                        <p>Dolgu uygulamasında doğallık tam istediğim gibi oldu. Kesinlikle tavsiye ederim!</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Selda K.</h6><span>Psikolog</span>
+                        </div>
+                        <p>Danışmanlık sürecinde aldığım destek beni çok rahatlattı. Gönül rahatlığıyla öneririm.</p>
+                    </article>
                 </div>
+            </div>
 
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Burak Y.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">İşletmeci</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+            <!-- ALT ŞERİT (sola kayar) -->
+            <div class="testimonial-ticker ticker-bottom">
+                <div class="ticker-track">
+                    <!-- İstersen farklı kartlar, istersen yukarıdakilerin bir kısmı -->
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Ayhan D.</h6><span>Memur</span>
                         </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Cilt gençleştirme işlemi sonrası tenimdeki yenilenme etkisi inanılmaz. Kendimi çok daha dinç
-                            hissediyorum.
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
+                        <p>Tedavi süreci şeffaf ve çok açıklayıcıydı. Kendimi güvende hissettim, çok teşekkürler.</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Betül K.</h6><span>Öğretmen</span>
                         </div>
-                    </div>
+                        <p>Etik değerlere sahip, başarılı bir hekim. Sonuçlardan çok memnunum.</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Esin Y.</h6><span>Mühendis</span>
+                        </div>
+                        <p>İşlem öncesi ve sonrası ilgiden çok memnun kaldım. Sonuçlar doğal ve taze.</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Filiz Ö.</h6><span>Ev Hanımı</span>
+                        </div>
+                        <p>Umutlarımı tazeledi, kendimi daha iyi hissediyorum. Ellerinize sağlık.</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <h6>Handan F.</h6><span>Bankacı</span>
+                        </div>
+                        <p>Ne yazsam az kalır; güler yüzlü, bilgilendirici ve çok profesyonel.</p>
+                    </article>
                 </div>
-
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Merve T.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">Mimar</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Somon DNA ve PRP uygulamaları sayesinde cildim hiç olmadığı kadar parlak ve sağlıklı.
-                            Teşekkür ederim!
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Merve T.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">Mimar</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Somon DNA ve PRP uygulamaları sayesinde cildim hiç olmadığı kadar parlak ve sağlıklı.
-                            Teşekkür ederim!
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Emre K.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">Mühendis</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Mezoterapi sonrası cildimdeki canlılık ve nem artışı gözle görülür şekilde oldu. Çok
-                            memnunum!
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Aylin B.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">Avukat</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Uzun zamandır denemediğim yöntem kalmamıştı. Dr. Yasin Bey’in doğru yönlendirmesiyle
-                            istediğim görünüme ulaştım.
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Selin D.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">Doktor</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Dolgu uygulamasında gösterilen özen ve doğallık tam istediğim gibi oldu. Kesinlikle tavsiye
-                            ederim!
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Ahmet C.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">Girişimci</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Tedavi sürecinde gösterilen ilgi ve alaka gerçekten çok iyiydi. Çok teşekkür ederim.
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-item rounded p-4 position-relative"
-                    style="background: rgba(255 255 255 / 0.05);">
-                    <div class="row">
-                        <div class="col-4 d-flex flex-column justify-content-center text-center">
-                            <h4 class="mb-1 text-primary" style="color:#ff157f;">Selda K.</h4>
-                            <p class="m-0 text-white fst-italic mb-3">Psikolog</p>
-                            <div class="d-flex justify-content-center gap-1" style="font-size: 22px; color: #ff157f;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="col-8 position-relative text-white fs-5"
-                            style="line-height: 1.5; padding-left: 20px;">
-                            Danışmanlık sürecinde aldığım destek beni çok rahatlattı. Kesinlikle tavsiye ederim!
-                            <i class="fa fa-quote-right text-purple position-absolute"
-                                style="top: 10px; right: 10px; font-size: 1.8rem; opacity: 0.35;"></i>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Testimonial End -->
 
-    <style>
-        .text-purple {
-            color: #6818f5 !important;
-        }
-    </style>
 
 
     <!-- Contact Start -->
@@ -1518,6 +1200,34 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
+
+
+    <script>
+        document.querySelectorAll('.testimonial-ticker .ticker-track').forEach(track => {
+            // 1) İçeriği birebir klonla (yanına koy) → toplam 2x
+            const originals = Array.from(track.children);
+            originals.forEach(el => track.appendChild(el.cloneNode(true)));
+
+            // 2) Hızı içerik genişliğine göre ayarla (px/sn başına süre)
+            const container = track.parentElement;
+            // 2x içerik var; animasyon -50% yaptığı için yarı genişlik kadar yol alacak
+            const halfWidth = track.scrollWidth / 2;
+            const speedPxPerSec = 80; // hız: 80px/sn (daha yavaş için düşür, daha hızlı için artır)
+            const duration = Math.max(halfWidth / speedPxPerSec, 20); // min 20s
+            track.style.setProperty('--dur', `${duration}s`);
+        });
+
+        // Tercih edilen azaltılmış hareket -> durdur
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('.testimonial-ticker .ticker-track')
+                .forEach(t => t.style.animationPlayState = 'paused');
+        }
+    </script>
+
+
+
+
 </body>
 
 </html>
