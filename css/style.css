@@ -847,100 +847,68 @@ textarea.form-control:focus {
     }
 }
 
-/* Ticker alanında boşluk/fade yok */
-.testimonial-ticker {
-    position: relative;
-    overflow: hidden;
-    /* fade kapalı: kenarlarda boş görünmez */
-    mask-image: none;
-    -webkit-mask-image: none;
-    margin-bottom: 1.25rem;
-    padding: 0;
-    /* iç boşluk olmasın */
-}
 
-/* Sürekli akış: içerik 2 kez yan yana + 0→-50% */
-.testimonial-ticker .ticker-track {
-    display: inline-flex;
-    gap: 1rem;
+/* --- Bölümü açık temaya çek (inline koyu bg'yi override et) --- */
+section.container-fluid.py-5[style*="#2c001e"]{
+    background:#fff !important;
+  }
+  
+  /* Başlık renkleri (açık tema) */
+  section.container-fluid.py-5[style*="#2c001e"] .text-uppercase{ color:#7c3aed !important; }
+  section.container-fluid.py-5[style*="#2c001e"] h1{ color:#111 !important; }
+  
+  /* --- Kenarlara yumuşak FADE (blur yok, beyaza erir) --- */
+  .testimonial-ticker{
+    position:relative;
+    overflow:hidden;
+    margin-bottom:1.25rem;
+    padding-inline:8px;
+    /* kenarlarda saydamlaşma -> altta beyaz görünür */
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 12%, black 88%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, black 12%, black 88%, transparent 100%);
+  }
+  /* Eski blur perdeleri kapat */
+  .testimonial-ticker::before,
+  .testimonial-ticker::after{ content:none; }
+  
+  /* --- Kayan track aynı --- */
+  .testimonial-ticker .ticker-track{
+    display:inline-flex;
+    gap:1rem;
     will-change: transform;
     animation: ticker-scroll var(--dur, 40s) linear infinite;
-}
-
-.ticker-bottom .ticker-track {
-    animation-name: ticker-scroll-rev;
-}
-
-/* Hover’da durdur */
-.testimonial-ticker:hover .ticker-track {
-    animation-play-state: paused;
-}
-
-/* Kart */
-.t-card {
-    min-width: 320px;
-    max-width: 360px;
-    background: rgba(255, 255, 255, .06);
-    border: 1px solid rgba(255, 255, 255, .08);
-    color: #fff;
-    padding: 16px 18px;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
-}
-
-.t-card .t-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: .35rem;
-}
-
-.t-card .t-head h6 {
-    margin: 0;
-    font-weight: 700;
-    color: #ff157f;
-}
-
-/* Meslek GRUPLARINI GİZLE */
-.t-card .t-head span {
-    display: none;
-}
-
-.t-card p {
-    margin: 0;
-    line-height: 1.55;
-    color: #f2f2f2;
-}
-
-/* Animasyonlar – boşluksuz */
-@keyframes ticker-scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-@keyframes ticker-scroll-rev {
-    from {
-        transform: translateX(-50%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* Responsive */
-@media (max-width:576px) {
-    .t-card {
-        min-width: 260px;
-        max-width: 280px;
-    }
-
-    .testimonial-ticker .ticker-track {
-        gap: .75rem;
-    }
-}
+  }
+  .ticker-bottom .ticker-track{ animation-name: ticker-scroll-rev; }
+  
+  /* Hover pause */
+  .testimonial-ticker:hover .ticker-track{ animation-play-state: paused; }
+  
+  /* --- Kartlar: açık tema stili --- */
+  .t-card{
+    min-width:320px; max-width:360px;
+    background:#fff;                          /* beyaz kart */
+    border:1px solid #eee;                    /* ince gri kenar */
+    color:#333;                               /* koyu metin */
+    padding:16px 18px; border-radius:16px;
+  }
+  .t-card .t-head{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:.35rem;
+  }
+  .t-card .t-head h6{
+    margin:0; font-weight:700; color:#7c3aed; /* mor isim */
+  }
+  /* Meslekleri gizli tut */
+  .t-card .t-head span{ display:none; }
+  .t-card p{ margin:0; line-height:1.55; color:#555; }
+  
+  /* Animasyonlar */
+  @keyframes ticker-scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes ticker-scroll-rev{ from{transform:translateX(-50%)} to{transform:translateX(0)} }
+  
+  /* Responsive */
+  @media (max-width:576px){
+    .t-card{ min-width:260px; max-width:280px; }
+    .testimonial-ticker .ticker-track{ gap:.75rem; }
+  }
+  
